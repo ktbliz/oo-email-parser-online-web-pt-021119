@@ -13,8 +13,9 @@ def initialize(emails)
 end 
 
 def parse 
-  parsed_emails = self.emails.split(", ")
-  parsed_emails.uniq
+     emails.split.map do | email |
+      email.split(", ")
+  end.flatten.uniq 
 end 
   
 end 
