@@ -14,7 +14,7 @@ end
 
 def parse 
   emails.split.map do | email |
-      email.split(", ")
+      email.split(",")
   end.flatten.uniq 
 end 
   
