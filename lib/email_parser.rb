@@ -13,17 +13,11 @@ def initialize(emails)
 end 
 
 def parse 
-  if self.emails.split(",").length > 1 
-    emails_array = self.emails.split(", ")
-    emails_array2 = []
-    emails_array.each do |email|
-      emails_array2 << email.split
-    end
-    return emails_array2.flatten.uniq 
-  else 
-    emails_array = self.emails.split(" ")
-    return emails_array.uniq
-  end
+  emails.split.map do | email |
+      email.split(",")
+  end.flatten.uniq 
 end 
+
+
   
 end 
